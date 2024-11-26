@@ -3,7 +3,7 @@
 
 El arbol de ficheros del proyecto es:
 
-```c
+```
 /cinquillo/
 │
 ├── cinquillo.c               # Archivo principal del juego (contiene la lógica del main)
