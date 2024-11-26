@@ -1,4 +1,3 @@
-// jugador.h
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include "carta.h"

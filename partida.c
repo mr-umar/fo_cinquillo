@@ -1,6 +1,7 @@
 #include "partida.h"
 #include "jugador.h"
 #include "mesa.h"
+#include <stdio.h>
 
 int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) {
     for (int i = 0; i < NUM_JUGS; i++) {
@@ -16,12 +17,30 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
 }
 
 int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS], t_carta *carta_seleccionada) {
+    t_cartas_posibles posibles;
+    posibles.num_cartas = 0;
+
+    // Determinar las cartas posibles
     for (int i = 0; i < jugadores[num_jugador].num_cartas; i++) {
         if (es_posible(jugadores[num_jugador].cartas[i], mantel)) {
-            *carta_seleccionada = jugadores[num_jugador].cartas[i];
-            return TRUE;
+            posibles.cartas[posibles.num_cartas] = jugadores[num_jugador].cartas[i];
+            posibles.num_cartas++;
         }
     }
+
+    if (posibles.num_cartas > 0) {
+        // Mostrar las cartas posibles
+        printf("Tiradas posibles: ");
+        for (int i = 0; i < posibles.num_cartas; i++) {
+            printf("%d: ", i + 1);
+            imprimir_carta(posibles.cartas[i].pal, posibles.cartas[i].num);
+            printf(" ");
+        }
+        printf("\n\nQue tirada realizas? 1\n");
+        *carta_seleccionada = posibles.cartas[0]; // Selección automática para el ordenador
+        return TRUE;
+    }
+
     return FALSE;
 }
 
