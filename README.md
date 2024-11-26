@@ -3,7 +3,7 @@
 
 El arbol de ficheros del proyecto es:
 
-```
+```c
 /cinquillo/
 │
 ├── cinquillo.c               # Archivo principal del juego (contiene la lógica del main)
@@ -24,3 +24,11 @@ El arbol de ficheros del proyecto es:
 └── partida.c                 # Funciones relacionadas con la partida, como la inicialización y detección del final
 └── partida.h                 # Definición de las funciones de la partida
 ```
+
+
+Compilar:
+```sh
+gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c duerme.c -o cinquillo -Wall
+```
+
+ Wall: Para ver los warnings en pantalla. (Warning All)
