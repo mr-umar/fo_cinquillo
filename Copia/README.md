@@ -35,7 +35,7 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 
 
 --toDO: 
-- No muestra correctamente el jugador que gana.
+- No muestra correctamente el jugador que gana. **SOLUCIONADO 🆗**
 - El mantel no se muestra correctamente, solo muestra el número de la carta en cada columna.
 - En las cartas no están en el formato que piden.
 - La seleccion de jugadas del ordenador no es aleatoria
@@ -43,3 +43,11 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 - Opcion de jugar el usuario o no
 - cambiar 8 9 10 por 10 11 12
 - Asignar el color por palo al mantel
+
+
+------------
+
+
+| **Javi** | **Alvaro** | **Umar** |
+|----------|----------|----------|
+| Mostrar mantel correcto | Formato de las cartas y colores | Seleccion al azar de posibles jugadas |

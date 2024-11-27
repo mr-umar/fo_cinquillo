@@ -1,7 +1,7 @@
 #ifndef JUGADOR_H
 #define JUGADOR_H
 #include "carta.h"
-#include "baraja.h"  // Añadido para que reconozca t_baraja
+#include "baraja.h"  
 
 #define NUM_JUGS 4
 #define NUM_CARTAS_JUG 10
