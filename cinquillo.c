@@ -24,6 +24,8 @@ int main() {
     // Poner el 5 de oros en el mantel
     jugador_que_empieza = poner_5_oros(jugadores, mantel);
 
+
+
     // Bucle del juego
     do {
         for (int i = jugador_que_empieza; i < NUM_JUGS && !final; i++) {
