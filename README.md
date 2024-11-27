@@ -47,4 +47,4 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 
 | **Javi** | **Alvaro** | **Umar** |
 |----------|----------|----------|
-| Mantel | Formato de las cartas y colores | Seleccion al azar de posibles jugadas |
+| Mostrar mantel correcto | Formato de las cartas y colores | Seleccion al azar de posibles jugadas |
