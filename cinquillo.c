@@ -8,6 +8,7 @@
 #include "mesa.h"
 #include "partida.h"
 
+
 int main() {
     t_jugador jugadores[NUM_JUGS];
     t_baraja baraja;
