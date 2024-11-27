@@ -35,7 +35,7 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 
 
 --toDO: 
-- No muestra correctamente el jugador que gana. SOLUCIONADO 🆗
+- No muestra correctamente el jugador que gana. **SOLUCIONADO 🆗**
 - El mantel no se muestra correctamente, solo muestra el número de la carta en cada columna.
 - En las cartas no están en el formato que piden.
 - La seleccion de jugadas del ordenador no es aleatoria
