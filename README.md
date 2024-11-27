@@ -45,7 +45,7 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 - Asignar el color por palo al mantel
 
 
-
+------------
 
 
 | **Javi** | **Alvaro** | **Umar** |
