@@ -1,6 +1,7 @@
 #include "partida.h"
 #include "jugador.h"
 #include "mesa.h"
+#include "azar.h"
 #include <stdio.h>
 
 int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) {
@@ -9,6 +10,8 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
             if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) { // 5 de oros tiene identificador 4
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
+                printf("\nTurno de JUG#%d:\n", i + 1);
+                printf("Tiradas posibles: 1: [5 de Oros]\n¿Que tirada realizas? 1\n");
                 return (i + 1) % NUM_JUGS; // El siguiente jugador
             }
         }
@@ -30,15 +33,23 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
 
     if (posibles.num_cartas > 0) {
         // Mostrar las cartas posibles
-        printf("Tiradas posibles: ");
+        printf("Tiradas posibles:");
         for (int i = 0; i < posibles.num_cartas; i++) {
-            printf("%d: ", i + 1);
+            printf(" %d: ", i + 1);
             imprimir_carta(posibles.cartas[i].pal, posibles.cartas[i].num);
-            printf(" ");
         }
-        printf("\n\nQue tirada realizas? 1\n");
-        *carta_seleccionada = posibles.cartas[0]; // Selección automática para el ordenador
+        printf("\n");
+
+        // Seleccionar una carta al azar de las disponibles
+        int indice_aleatorio = numero_al_azar(posibles.num_cartas);
+        *carta_seleccionada = posibles.cartas[indice_aleatorio];
+
+        // Mostrar la carta seleccionada por la IA
+        printf("¿Que tirada realizas? %d\n", indice_aleatorio + 1);
+
         return TRUE;
+    } else {
+        printf("Tiradas posibles:\nNinguna! :-/ Paso.\n");
     }
 
     return FALSE;
