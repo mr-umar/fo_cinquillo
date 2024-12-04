@@ -7,12 +7,12 @@
 int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) {
     for (int i = 0; i < NUM_JUGS; i++) {
         for (int j = 0; j < jugadores[i].num_cartas; j++) {
-            if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) { // 5 de oros tiene identificador 4
+            if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) {    // 5 de oros tiene identificador 4
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
                 printf("\nTurno de JUG#%d:\n", i + 1);
                 printf("Tiradas posibles: 1: [5 de Oros]\n¿Que tirada realizas? 1\n");
-                return (i + 1) % NUM_JUGS; // El siguiente jugador
+                return (i + 1) % NUM_JUGS;  // El siguiente jugador
             }
         }
     }
