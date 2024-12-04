@@ -41,7 +41,7 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 - La seleccion de jugadas del ordenador no es aleatoria  **SOLUCIONADO 🆗**
 - Opcion de mostrar o no la baraja
 - Opcion de jugar el usuario o no
-- cambiar 8 9 10 por 10 11 12
+- cambiar 8 9 10 por 10 11 12 **SOLUCIONADO 🆗**
 - Asignar el color por palo al mantel
 
 
@@ -50,5 +50,5 @@ gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c due
 
 | **Javi** | **Alvaro** | **Umar** |
 |----------|----------|----------|
-| Mostrar mantel correcto | Formato de las cartas  | Seleccion al azar de posibles jugadas  **SOLUCIONADO 🆗** |
+| Mostrar mantel correcto **SOLUCIONADO 🆗** | Formato de las cartas **SOLUCIONADO 🆗**  | Seleccion al azar de posibles jugadas  **SOLUCIONADO 🆗** |
 | | | Opcion de mostrar o no la baraja |
