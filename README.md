@@ -21,7 +21,7 @@ El arbol de ficheros del proyecto es:
 ├── jugador.h                 # Definición de los jugadores y sus funciones
 ├── mesa.c                    # Implementación de las funciones relacionadas con el mantel (mesa)
 ├── mesa.h                    # Definición de las funciones y constantes para la mesa
-└── partida.c                 # Funciones relacionadas con la partida, como la inicialización y detección del final
+├── partida.c                 # Funciones relacionadas con la partida, como la inicialización y detección del final
 └── partida.h                 # Definición de las funciones de la partida
 ```
 
