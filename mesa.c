@@ -7,7 +7,7 @@ void imprimir_mantel(int mantel[NUM_NUMS][NUM_PALS]) {
     printf("\n[ORO] [COP] [ESP] [BAS]\n");
 
     // Array con los números de las cartas que deben imprimirse
-    int numeros_cartas[] = {12, 11, 10, 7, 6, 5, 4, 3, 2, 1};
+    int numeros_cartas[10] = {12, 11, 10, 7, 6, 5, 4, 3, 2, 1};
     int total_cartas = sizeof(numeros_cartas) / sizeof(numeros_cartas[0]);
 
     for (int i = 0; i < total_cartas; i++) {
