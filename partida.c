@@ -45,11 +45,11 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
         *carta_seleccionada = posibles.cartas[indice_aleatorio];
 
         // Mostrar la carta seleccionada por la IA
-        printf("¿Que tirada realizas? %d\n", indice_aleatorio + 1);
+        printf("Que tirada realizas? %d\n", indice_aleatorio + 1);
 
         return TRUE;
     } else {
-        printf("Tiradas posibles:\nNinguna! :-/ Paso.\n");
+        printf("Tiradas posibles:\nNinguna! :( Paso.\n\n");
     }
 
     return FALSE;

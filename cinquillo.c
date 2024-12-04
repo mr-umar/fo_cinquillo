@@ -36,9 +36,9 @@ int main() {
             int puede_jugar = pedir_carta(i, jugadores, mantel, &carta_seleccionada);
             if (puede_jugar) {
                 final = poner_carta(carta_seleccionada, i, jugadores, mantel);
-            } else {
-                printf("\nNinguna jugada posible. Paso.\n");
-            }
+            } //else {
+                //printf("\nNinguna jugada posible. Paso.\n\n");
+            //}
             // duerme_un_rato(); // se comenta y se descomenta antes de la entrega
         }
         jugador_que_empieza = 0; // Reiniciar al jugador 0 para el ciclo

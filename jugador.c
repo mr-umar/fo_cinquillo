@@ -12,13 +12,14 @@ void repartir_cartas(t_baraja *p_baraja, t_jugador jugadores[NUM_JUGS]) {
 }
 
 void imprimir_jugadores(t_jugador jugadores[NUM_JUGS]) {
-    printf("\t[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [10 ]");
+    printf("\n\t[ 1 ] [ 2 ] [ 3 ] [ 4 ] [ 5 ] [ 6 ] [ 7 ] [ 8 ] [ 9 ] [10 ]");
     for (int i = 0; i < NUM_JUGS; i++) {
         printf("\nJUG #%d: ", i);
         for (int j = 0; j < jugadores[i].num_cartas; j++) {
             imprimir_carta(jugadores[i].cartas[j].pal, jugadores[i].cartas[j].num);
             printf(" ");
         }
-        printf("\n");
+        
     }
+    printf("\n");
 }

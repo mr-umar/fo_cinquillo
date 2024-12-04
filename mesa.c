@@ -33,7 +33,7 @@ void imprimir_mantel(int mantel[NUM_NUMS][NUM_PALS]) {
                         printf("[B%2d] ", numeros_cartas[i]); 
                         break;
                 }
-                printf_reset_color(); // Reiniciar el color
+                printf_reset_color(); // Reiniciar color
             } else {
                 printf("[- -] ");
             }
