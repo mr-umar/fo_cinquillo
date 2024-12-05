@@ -53,8 +53,6 @@ int main() {
             final = poner_carta(carta_seleccionada, jugador_actual, jugadores, mantel);
         }
 
-
-
         // Avanzar al siguiente jugador de manera cíclica
         jugador_actual = (jugador_actual + 1) % NUM_JUGS;
 
