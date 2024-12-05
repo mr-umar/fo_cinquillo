@@ -19,7 +19,18 @@ void imprimir_jugadores(t_jugador jugadores[NUM_JUGS]) {
             imprimir_carta(jugadores[i].cartas[j].pal, jugadores[i].cartas[j].num);
             printf(" ");
         }
-        
     }
     printf("\n");
+}
+
+int pedir_jugada_humana(t_jugador jugador, t_carta cartas_posibles[], int num_cartas_posibles) {
+    int opcion;
+    do {
+        printf("¿Qué tirada realizas? ");
+        scanf("%d", &opcion);
+        if (opcion < 1 || opcion > num_cartas_posibles) {
+            printf("Por favor, elige una tirada de las opciones disponibles.\n");
+        }
+    } while (opcion < 1 || opcion > num_cartas_posibles);
+    return opcion - 1;
 }

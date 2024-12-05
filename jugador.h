@@ -13,5 +13,6 @@ typedef struct {
 
 void repartir_cartas(t_baraja *p_baraja, t_jugador jugadores[NUM_JUGS]);
 void imprimir_jugadores(t_jugador jugadores[NUM_JUGS]);
+int pedir_jugada_humana(t_jugador jugador, t_carta cartas_posibles[], int num_cartas_posibles);
 
 #endif

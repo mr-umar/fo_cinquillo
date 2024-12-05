@@ -10,10 +10,8 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
             if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) {    // 5 de oros tiene identificador 4
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
-                printf("\nTurno de JUG#%d:\n", i + 1);
-                printf("Tiradas posibles: 1: ");
-                imprimir_carta(0, 4);
-                printf("\nQue tirada realizas? 1\n");
+                printf("\nTurno de JUG#%d:\n", i);
+                printf("Tiradas posibles: 1: [5 de Oros]\n¿Que tirada realizas? 1\n");
                 return (i + 1) % NUM_JUGS;  // El siguiente jugador
             }
         }
@@ -21,7 +19,7 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
     return 0;
 }
 
-int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS], t_carta *carta_seleccionada) {
+int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS], t_carta *carta_seleccionada, int es_humano) {
     t_cartas_posibles posibles;
     posibles.num_cartas = 0;
 
@@ -42,16 +40,26 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
         }
         printf("\n");
 
-        // Seleccionar una carta al azar de las disponibles
-        int indice_aleatorio = numero_al_azar(posibles.num_cartas);
-        *carta_seleccionada = posibles.cartas[indice_aleatorio];
+        if (es_humano && num_jugador == NUM_JUGS - 1) {
+            int opcion;
+            do {
+                printf("¿Qué tirada realizas? ");
+                scanf("%d", &opcion);
+                if (opcion < 1 || opcion > posibles.num_cartas) {
+                    printf("Por favor, elige una tirada de las opciones disponibles.\n");
+                }
+            } while (opcion < 1 || opcion > posibles.num_cartas);
+            *carta_seleccionada = posibles.cartas[opcion - 1];
+        } else {
+            // Seleccionar una carta al azar de las disponibles
+            int indice_aleatorio = numero_al_azar(posibles.num_cartas);
+            *carta_seleccionada = posibles.cartas[indice_aleatorio];
 
-        // Mostrar la carta seleccionada por la IA
-        printf("Que tirada realizas? %d\n", indice_aleatorio + 1);
+            // Mostrar la carta seleccionada por la IA
+            printf("Que tirada realizas? %d\n", indice_aleatorio + 1);
+        }
 
         return TRUE;
-    } else {
-        printf("Tiradas posibles:\nNinguna! :( Paso.\n\n");
     }
 
     return FALSE;
