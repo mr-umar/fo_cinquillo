@@ -2,6 +2,7 @@
 #include "jugador.h"
 #include "mesa.h"
 #include "azar.h"
+// #include "duerme.h"
 #include <stdio.h>
 
 int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) {
@@ -10,8 +11,10 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
             if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) {    // 5 de oros tiene identificador 4
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
-                printf("\nTurno de JUG#%d:\n", i);
-                printf("Tiradas posibles: 1: [5 de Oros]\n¿Que tirada realizas? 1\n");
+                printf("\nTurno de JUG#%d:\n", i + 1);
+                printf("Tiradas posibles: 1: ");
+                imprimir_carta(0, 4);
+                printf("\n¿Que tirada realizas? 1\n");
                 return (i + 1) % NUM_JUGS;  // El siguiente jugador
             }
         }
@@ -43,7 +46,7 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
         if (es_humano && num_jugador == NUM_JUGS - 1) {
             int opcion;
             do {
-                printf("¿Qué tirada realizas? ");
+                printf("> Que tirada realizas? ");
                 scanf("%d", &opcion);
                 if (opcion < 1 || opcion > posibles.num_cartas) {
                     printf("Por favor, elige una tirada de las opciones disponibles.\n");

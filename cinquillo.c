@@ -19,14 +19,14 @@ int main() {
     // Preguntar si hay un jugador humano
     char respuesta;
     do {
-        printf("¿Hay algún jugador humano? [s/n]: ");
+        printf("> Hay algun jugador humano? [s/n]: ");
         scanf(" %c", &respuesta);
         if (respuesta == 's' || respuesta == 'S') {
             jugador_humano = NUM_JUGS - 1;  // Jugador humano será el jugador número 3 (último)
         } else if (respuesta == 'n' || respuesta == 'N') {
             jugador_humano = -1; // No hay jugador humano
         } else {
-            printf("Por favor, responde 's' o 'n'.\n");
+            printf("> Por favor, responde 's' o 'n'.\n");
         }
     } while (respuesta != 's' && respuesta != 'S' && respuesta != 'n' && respuesta != 'N');
 
@@ -42,7 +42,10 @@ int main() {
     while (!final) {
         imprimir_jugadores(jugadores);
         imprimir_mantel(mantel);
-        printf("\nTurno de JUG#%d:\n", jugador_actual);
+
+        duerme_un_rato();
+
+        printf("\nTurno de JUG#%d:\n", jugador_actual + 1);
 
         int puede_jugar = pedir_carta(jugador_actual, jugadores, mantel, &carta_seleccionada, jugador_actual == jugador_humano);
 
@@ -50,8 +53,11 @@ int main() {
             final = poner_carta(carta_seleccionada, jugador_actual, jugadores, mantel);
         }
 
+
+
         // Avanzar al siguiente jugador de manera cíclica
         jugador_actual = (jugador_actual + 1) % NUM_JUGS;
+
     }
 
     int jugador_previo = jugador_actual == 0 ? NUM_JUGS - 1 : jugador_actual - 1;
@@ -59,7 +65,7 @@ int main() {
     imprimir_jugadores(jugadores);
     imprimir_mantel(mantel);
     printf_color_negrita();
-    printf("\nHA GANADO EL JUGADOR #%d.\n\n", jugador_previo);
+    printf("\nHA GANADO EL JUGADOR #%d.\n\n", jugador_previo + 1);
     printf_reset_color();
 
     return 0;
