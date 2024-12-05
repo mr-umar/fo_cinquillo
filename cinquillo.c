@@ -22,8 +22,7 @@ int main() {
     repartir_cartas(&baraja, jugadores);
 
     // Poner el 5 de oros en el mantel
-    jugador_que_empieza = poner_5_oros(jugadores, mantel);
-
+    jugador_que_empieza = poner_5_oros(jugadores, mantel) + 1;
 
 
     // Bucle del juego
@@ -47,7 +46,7 @@ int main() {
     imprimir_jugadores(jugadores);
     imprimir_mantel(mantel);
     printf_color_negrita();
-    printf("\nHA GANADO EL JUGADOR #%d.\n\n", jugador_actual);
+    printf("\nHA GANADO EL JUGADOR #%d. :)\n\n", jugador_actual);
     printf_reset_color();
 
     return 0;

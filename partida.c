@@ -11,7 +11,9 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
                 printf("\nTurno de JUG#%d:\n", i + 1);
-                printf("Tiradas posibles: 1: [5 de Oros]\n¿Que tirada realizas? 1\n");
+                printf("Tiradas posibles: 1: ");
+                imprimir_carta(0, 4);
+                printf("\nQue tirada realizas? 1\n");
                 return (i + 1) % NUM_JUGS;  // El siguiente jugador
             }
         }
