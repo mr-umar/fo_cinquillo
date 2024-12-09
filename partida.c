@@ -64,6 +64,9 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
 
         return TRUE;
     }
+    else{
+        printf("No hay tiradas disponibles :(");
+    }
 
     return FALSE;
 }
