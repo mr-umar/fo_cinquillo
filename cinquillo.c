@@ -14,21 +14,8 @@ int main() {
     int mantel[NUM_NUMS][NUM_PALS] = {0}; // Matriz para representar el mantel (inicializado a FALSE)
     t_carta carta_seleccionada;
     int jugador_actual, final = FALSE;
-    int jugador_humano = -1;
-
-    // Preguntar si hay un jugador humano
-    char respuesta;
-    do {
-        printf("> Hay algun jugador humano? [s/n]: ");
-        scanf(" %c", &respuesta);
-        if (respuesta == 's' || respuesta == 'S') {
-            jugador_humano = NUM_JUGS - 1;  // Jugador humano será el jugador número 3 (último)
-        } else if (respuesta == 'n' || respuesta == 'N') {
-            jugador_humano = -1; // No hay jugador humano
-        } else {
-            printf("> Por favor, responde 's' o 'n'.\n");
-        }
-    } while (respuesta != 's' && respuesta != 'S' && respuesta != 'n' && respuesta != 'N');
+    int jugador_humano = obtener_jugador_humano();
+    int ocultar_cartas = preguntar_ocultar_cartas();
 
     // Inicializamos baraja y azar
     crear_baraja(&baraja);
@@ -40,7 +27,7 @@ int main() {
 
     // Bucle del juego
     while (!final) {
-        imprimir_jugadores(jugadores);
+        imprimir_jugadores(jugadores, jugador_humano, ocultar_cartas);
         imprimir_mantel(mantel);
 
         duerme_un_rato();
@@ -55,12 +42,11 @@ int main() {
 
         // Avanzar al siguiente jugador de manera cíclica
         jugador_actual = (jugador_actual + 1) % NUM_JUGS;
-
     }
 
     int jugador_previo = jugador_actual == 0 ? NUM_JUGS - 1 : jugador_actual - 1;
 
-    imprimir_jugadores(jugadores);
+    imprimir_jugadores(jugadores, jugador_humano, 0); // Mostrar todo al final
     imprimir_mantel(mantel);
     printf_color_negrita();
     printf("\nHA GANADO EL JUGADOR #%d.\n\n", jugador_previo + 1);

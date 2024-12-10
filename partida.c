@@ -11,16 +11,20 @@ int poner_5_oros(t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS]) 
             if (jugadores[i].cartas[j].pal == PAL_OROS && jugadores[i].cartas[j].num == 4) {    // 5 de oros tiene identificador 4
                 mantel[4][PAL_OROS] = TRUE;
                 eliminar_carta_jugador(jugadores[i].cartas[j], i, jugadores);
+
                 printf("\nTurno de JUG#%d:\n", i + 1);
                 printf("Tiradas posibles: 1: ");
-                imprimir_carta(0, 4);
+                imprimir_carta(PAL_OROS, 4);
                 printf("\n¿Que tirada realizas? 1\n");
-                return (i + 1) % NUM_JUGS;  // El siguiente jugador
+
+                return (i + 1) % NUM_JUGS;  // Pasar al siguiente jugador
             }
         }
     }
     return 0;
 }
+
+
 
 int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_NUMS][NUM_PALS], t_carta *carta_seleccionada, int es_humano) {
     t_cartas_posibles posibles;
@@ -43,7 +47,7 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
         }
         printf("\n");
 
-        if (es_humano && num_jugador == NUM_JUGS - 1) {
+        if (es_humano && num_jugador == 0) {
             int opcion;
             do {
                 printf("> Que tirada realizas? ");
