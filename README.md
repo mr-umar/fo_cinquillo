@@ -1,6 +1,11 @@
 # fo_cinquillo
 ♠️ Proyecto de FO para el juego del cinquillo
 
+Compilar:
+```sh
+gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c duerme.c -o cinquillo 
+```
+
 El arbol de ficheros del proyecto es:
 
 ```
@@ -26,29 +31,6 @@ El arbol de ficheros del proyecto es:
 ```
 
 
-Compilar:
-```sh
-gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c duerme.c -o cinquillo -Wall
-```
-
- Wall: Para ver los warnings en pantalla. (Warning All)
 
 
---toDO: 
-- No muestra correctamente el jugador que gana. **SOLUCIONADO 🆗**
-- El mantel no se muestra correctamente, solo muestra el número de la carta en cada columna.  **SOLUCIONADO 🆗**
-- En las cartas no están en el formato que piden. **SOLUCIONADO 🆗**
-- La seleccion de jugadas del ordenador no es aleatoria  **SOLUCIONADO 🆗**
-- Opcion de mostrar o no la baraja
-- Opcion de jugar el usuario o no
-- cambiar 8 9 10 por 10 11 12 **SOLUCIONADO 🆗**
-- Asignar el color por palo al mantel **SOLUCIONADO 🆗**
 
-
-------------
-
-
-| **Javi** | **Alvaro** | **Umar** |
-|----------|----------|----------|
-| Mostrar mantel correcto **SOLUCIONADO 🆗** | Formato de las cartas **SOLUCIONADO 🆗**  | Seleccion al azar de posibles jugadas  **SOLUCIONADO 🆗** |
-| | | Opcion de mostrar o no la baraja |
