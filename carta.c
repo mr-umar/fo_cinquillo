@@ -20,5 +20,5 @@ void imprimir_carta(int pal, int num) {
         printf("[%s%s]", palos[pal], figuras[num]);  // Números 10 a 12
     }
 
-    printf_reset_color(); // Reinicia el color.
+    printf_reset_color(); 
 }

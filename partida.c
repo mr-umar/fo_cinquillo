@@ -45,7 +45,7 @@ int pedir_carta(int num_jugador, t_jugador jugadores[NUM_JUGS], int mantel[NUM_N
         }
         printf("\n");
 
-        if (es_humano && num_jugador == 0) { // El humano es siempre el jugador 0
+        if (es_humano && num_jugador == 0) { // El humano es siempre el jugador 0 (Primero)
             int opcion;
             do {
                 printf("> Que tirada realizas? ");

@@ -47,11 +47,11 @@ void imprimir_mantel(int mantel[NUM_NUMS][NUM_PALS]) {
                         printf("[B%2d] ", numeros_cartas[i]);
                         break;
                 }
-                printf_reset_color(); // Reinicia el color
+                printf_reset_color();
             } else {
-                printf("[- -] "); // Muestra un espacio vacío si no hay carta
+                printf("[- -] ");
             }
         }
-        printf("\n"); // Salto de línea después de imprimir una fila
+        printf("\n"); 
     }
 }
