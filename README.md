@@ -1,4 +1,4 @@
-# fo_cinquillo
+# CINQUILLO 
 ♠️ Proyecto de FO (FONAMENTS D'ORDINADORS ETSETB - 230005) para el juego del cinquillo
 
 Compilar:
