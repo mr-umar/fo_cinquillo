@@ -1,5 +1,5 @@
 # CINQUILLO 
-♠️ Proyecto de FO (FONAMENTS D'ORDINADORS ETSETB - 230005) para el juego del cinquillo
+♠️ Proyecto de *Fonaments d'Ordinadors* (FO - 230005) de ETSETB, que implementa el juego del *Cinquillo* en C.
 
 Compilar:
 ```sh
