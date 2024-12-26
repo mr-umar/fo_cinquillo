@@ -6,7 +6,7 @@ Compilar:
 gcc cinquillo.c carta.c baraja.c jugador.c mesa.c partida.c colores.c azar.c duerme.c -o cinquillo 
 ```
 
-El arbol de ficheros del proyecto es:
+El árbol de ficheros del proyecto es:
 
 ```
 /cinquillo/
